@@ -14,6 +14,8 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
+    - name: Checkout Code
+      uses: actions/checkout@v3
     - name: Create Tag for Docker Image
       id: vars
       run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
