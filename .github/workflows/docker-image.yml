@@ -20,7 +20,7 @@ jobs:
       id: vars
       run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
     - name: Check Tag for Docker Image
-      run: echo ${{ steps.vars.outputs.sha_short }}
+      run: "echo Docker image will be:  ${{ steps.vars.outputs.sha_short }}"
     - name: Build and push to Docker Hub
       uses: docker/build-push-action@v4
       with:
