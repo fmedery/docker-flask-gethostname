@@ -18,5 +18,5 @@ jobs:
           image: fmedery/docker-flask-gethostname
           # tags: v1, latest
           registry: docker.io
-          username: ${{ secrets.DOCKER_HUB_TOKEN }}
-          password: ${{ secrets.DOCKER_HUB_USERNAME }}
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
