@@ -2,7 +2,9 @@ name: Docker Image build and push
 
 on:
   push:
-    branches: [ "main" ]
+  # Pattern matched against refs/tags
+  tags:        
+        - 'v**' # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#patterns-to-match-branches-and-tags
 
 jobs:
   building-containers:
@@ -16,6 +18,7 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_TOKEN }}
     - name: Checkout Code
       uses: actions/checkout@v3
+    - name: 
     - name: Create Tag for Docker Image
       id: vars
       run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
